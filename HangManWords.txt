@@ -1,0 +1,10 @@
+Ala ma kota!
+"java programming",
+"dog and cat",
+"yellow",
+"wardrobe full of clothes",
+"backpack on my back",
+"window is wide open",
+"clock",
+"mirror ",
+"eyeglasses on my nose"
