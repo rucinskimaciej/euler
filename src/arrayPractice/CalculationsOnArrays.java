@@ -2,7 +2,7 @@ package arrayPractice;
 
 import java.util.Arrays;
 
-public class CalculationsOnArrays {
+class CalculationsOnArrays {
 
     int sumArray(int [][] arr){
         int sum = 0;

@@ -2,7 +2,7 @@ package fizzBuzz;
 
 import java.util.stream.IntStream;
 
-public class FizzBuzz {
+class FizzBuzz {
     public static void main(String[] args) {
         String fizz = "Fizz";
         String buzz = "Buzz";

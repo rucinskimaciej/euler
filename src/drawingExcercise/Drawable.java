@@ -1,6 +1,6 @@
 package drawingExcercise;
 
-public interface Drawable {
+interface Drawable {
     void draw();
     void setData();
 }

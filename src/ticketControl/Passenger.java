@@ -1,6 +1,6 @@
 package ticketControl;
 
-public class Passenger {
+class Passenger {
     private String  name,
                     lastName;
     private Ticket ticket;

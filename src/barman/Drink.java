@@ -2,7 +2,7 @@ package barman;
 
 import java.util.List;
 
-public class Drink {
+class Drink {
     private String drinkName;
     private List<Ingredient> ingredients;
 

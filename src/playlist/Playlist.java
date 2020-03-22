@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Playlist {
+class Playlist {
     public static void main(String[] args) {
         List<Song> songs = new ArrayList<>();
         songs.add(new Song("Ulalala", 320));

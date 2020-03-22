@@ -2,7 +2,7 @@ package hangman;
 
 import java.util.Scanner;
 
-public class PlayHangman {
+class PlayHangman {
     public static void main(String[] args) {
         Gameplay play;
         play = new Gameplay(chooseSource());

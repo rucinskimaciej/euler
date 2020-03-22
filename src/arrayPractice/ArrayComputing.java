@@ -2,7 +2,7 @@ package arrayPractice;
 
 import java.util.Arrays;
 
-public class ArrayComputing {
+class ArrayComputing {
 
     int[][] biggerSum(int[][] arr1, int[][] arr2){
         CalculationsOnArrays calc = new CalculationsOnArrays();

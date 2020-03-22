@@ -2,7 +2,7 @@ package drawingExcercise;
 
 import java.util.Scanner;
 
-public class Rectangle implements Drawable{
+class Rectangle implements Drawable{
     private int a;
     private int b;
 

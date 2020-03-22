@@ -2,7 +2,7 @@ package drawingExcercise;
 
 import java.util.Scanner;
 
-public class Draw {
+class Draw {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("What do you want to draw? (square / rectangle / tree)" + "\n> ");

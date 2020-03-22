@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-public class NumberPrecision {
+class NumberPrecision {
     public static void main(String[] args) {
         int number = getNumber();
         appendToTarget(number);

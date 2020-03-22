@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 
 
-public class FilePhraseSource implements IPhraseSource {
+class FilePhraseSource implements IPhraseSource {
 
     private final String FILE_NAME = "HangManWords.txt";
 

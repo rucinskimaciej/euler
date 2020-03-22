@@ -3,11 +3,10 @@ package diamondDrawer;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class DiamondDrawer {
+class DiamondDrawer {
     public static void main(String[] args) {
         String diamond = createDiamond(10);
         System.out.println(diamond);
-        System.out.println(Long.MAX_VALUE);
     }
 
     private static String createDiamond(int length){

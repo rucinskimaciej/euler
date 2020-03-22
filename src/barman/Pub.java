@@ -1,6 +1,6 @@
 package barman;
 
-public class Pub {
+class Pub {
     public static void main(String[] args) {
         Bartender carl = new Bartender();
 

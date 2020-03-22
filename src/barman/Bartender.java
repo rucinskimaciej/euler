@@ -2,7 +2,7 @@ package barman;
 
 import java.util.*;
 
-public class Bartender {
+class Bartender {
 
     Drink createDrink(){
         Input input = new Input();

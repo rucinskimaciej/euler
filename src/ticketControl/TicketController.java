@@ -5,7 +5,7 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TicketController {
+class TicketController {
     public static void main(String[] args) {
         Passenger[] passengers = new Passenger[5];
         passengers[0] = (new Passenger("Maciej", "Ruciński"));

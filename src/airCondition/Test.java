@@ -3,7 +3,7 @@ package airCondition;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Test {
+class Test {
     public static void main(String[] args) throws InterruptedException {
         List<RoomTemperatureControl> controlRoom = new ArrayList<>();
         controlRoom.add(new RoomTemperatureControl(new Room("Room 0", 23.5,60, new BasicAirConditioner())));

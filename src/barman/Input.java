@@ -3,7 +3,7 @@ package barman;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Input {
+class Input {
     private Scanner scanner = new Scanner(System.in);
 
     String getString(String message){

@@ -2,7 +2,7 @@ package drawingExcercise;
 
 import java.util.Scanner;
 
-public class DrawTree implements Drawable {
+class DrawTree implements Drawable {
     private int height;
 
     @Override

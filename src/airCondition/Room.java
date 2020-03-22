@@ -1,6 +1,6 @@
 package airCondition;
 
-public class Room {
+class Room {
     private String roomName;
     private double temperature;
     private AirConditioner ac;

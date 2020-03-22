@@ -1,6 +1,6 @@
 package airCondition;
 
-public class RoomTemperatureControl {
+class RoomTemperatureControl {
     private Room room;
     private AirConditioner ac;
 

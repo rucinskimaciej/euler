@@ -1,6 +1,6 @@
 package arrayPractice;
 
-public class ArrayPractice {
+class ArrayPractice {
     public static void main(String[] args) {
 
         ArrayComputing a = new ArrayComputing();

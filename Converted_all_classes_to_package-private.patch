@@ -1,0 +1,751 @@
+Index: src/barman/Bartender.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/barman/Bartender.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/barman/Bartender.java	(date 1584699362951)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.*;
+ 
+-public class Bartender {
++class Bartender {
+ 
+     Drink createDrink(){
+         Input input = new Input();
+Index: src/barman/Input.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/barman/Input.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/barman/Input.java	(date 1584699362843)
+@@ -3,7 +3,7 @@
+ import java.util.InputMismatchException;
+ import java.util.Scanner;
+ 
+-public class Input {
++class Input {
+     private Scanner scanner = new Scanner(System.in);
+ 
+     String getString(String message){
+Index: src/airCondition/RoomTemperatureControl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/airCondition/RoomTemperatureControl.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/airCondition/RoomTemperatureControl.java	(date 1584699362864)
+@@ -1,6 +1,6 @@
+ package airCondition;
+ 
+-public class RoomTemperatureControl {
++class RoomTemperatureControl {
+     private Room room;
+     private AirConditioner ac;
+ 
+Index: src/airCondition/Test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/airCondition/Test.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/airCondition/Test.java	(date 1584699362961)
+@@ -3,7 +3,7 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-public class Test {
++class Test {
+     public static void main(String[] args) throws InterruptedException {
+         List<RoomTemperatureControl> controlRoom = new ArrayList<>();
+         controlRoom.add(new RoomTemperatureControl(new Room("Room 0", 23.5,60, new BasicAirConditioner())));
+Index: src/warehouse/FileCreator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/FileCreator.java	(date 1584699609963)
++++ src/warehouse/FileCreator.java	(date 1584699609963)
+@@ -0,0 +1,33 @@
++package warehouse;
++
++import java.io.*;
++import java.util.Arrays;
++import java.util.List;
++
++class FileCreator {
++
++    FileCreator(String fileName){
++        try (
++                var fileWriter = new FileWriter(new File(fileName), true);
++                var writer = new BufferedWriter(fileWriter);
++                ) {
++            String[] fileList = fileContent.split("\n");
++            for (String s: fileList){
++                writer.write(s);
++                writer.newLine();
++            }
++        } catch (IOException e) {
++            e.printStackTrace();
++        }
++    }
++
++    private String fileContent =
++            "Apple Macbook Pro 13;12\n" +
++            "Klawiatura Logitech Pro;66\n" +
++            "Dell XPS 2016;22\n" +
++            "Monitor Samsung 24;36\n" +
++            "Monitor HP;28\n" +
++            "Mysz Dell;53"
++            ;
++
++}
+Index: src/barman/Pub.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/barman/Pub.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/barman/Pub.java	(date 1584699362878)
+@@ -1,6 +1,6 @@
+ package barman;
+ 
+-public class Pub {
++class Pub {
+     public static void main(String[] args) {
+         Bartender carl = new Bartender();
+ 
+Index: src/barman/Drink.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/barman/Drink.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/barman/Drink.java	(date 1584699362854)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.List;
+ 
+-public class Drink {
++class Drink {
+     private String drinkName;
+     private List<Ingredient> ingredients;
+ 
+Index: src/airCondition/BasicAirConditioner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/airCondition/BasicAirConditioner.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/airCondition/BasicAirConditioner.java	(date 1584699362899)
+@@ -1,6 +1,6 @@
+ package airCondition;
+ 
+-public class BasicAirConditioner extends AirConditioner{
++class BasicAirConditioner extends AirConditioner{
+ 
+     public BasicAirConditioner() {
+         super(AcType.BASIC.efficiency);
+Index: src/airCondition/Room.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/airCondition/Room.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/airCondition/Room.java	(date 1584699362919)
+@@ -1,6 +1,6 @@
+ package airCondition;
+ 
+-public class Room {
++class Room {
+     private String roomName;
+     private double temperature;
+     private AirConditioner ac;
+Index: src/airCondition/ProAirConditioner.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/airCondition/ProAirConditioner.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/airCondition/ProAirConditioner.java	(date 1584699362827)
+@@ -1,6 +1,6 @@
+ package airCondition;
+ 
+-public class ProAirConditioner extends AirConditioner{
++class ProAirConditioner extends AirConditioner{
+ 
+     public ProAirConditioner() {
+         super(AcType.PRO.efficiency);
+Index: src/hangman/PlayHangman.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/PlayHangman.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/PlayHangman.java	(date 1584699609742)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Scanner;
+ 
+-public class PlayHangman {
++class PlayHangman {
+     public static void main(String[] args) {
+         Gameplay play;
+         play = new Gameplay(chooseSource());
+Index: src/hangman/WordSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/WordSource.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/WordSource.java	(date 1584699609704)
+@@ -7,7 +7,7 @@
+ import java.util.Random;
+ import java.util.stream.Collectors;
+ 
+-public class WordSource {
++class WordSource {
+ 
+         private final String FILE_NAME = "HangManWords.txt";
+ 
+Index: src/ticketControl/TicketMachine.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/ticketControl/TicketMachine.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/ticketControl/TicketMachine.java	(date 1584699609898)
+@@ -1,6 +1,6 @@
+ package ticketControl;
+ 
+-public class TicketMachine {
++class TicketMachine {
+ 
+     static Passenger buyTicket(Passenger passenger, int ticketMinutes){
+         return new Passenger(passenger.getName(), passenger.getLastName(), new Ticket(ticketMinutes));
+Index: src/warehouse/Product.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/Product.java	(date 1584699609825)
++++ src/warehouse/Product.java	(date 1584699609825)
+@@ -0,0 +1,14 @@
++package warehouse;
++
++class Product {
++    private String name;
++
++    public Product(String name) {
++        this.name = name;
++    }
++
++    @Override
++    public String toString() {
++        return name;
++    }
++}
+Index: src/ticketControl/Passenger.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/ticketControl/Passenger.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/ticketControl/Passenger.java	(date 1584699609908)
+@@ -1,6 +1,6 @@
+ package ticketControl;
+ 
+-public class Passenger {
++class Passenger {
+     private String  name,
+                     lastName;
+     private Ticket ticket;
+Index: src/numberPrecision/NumberPrecision.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/numberPrecision/NumberPrecision.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/numberPrecision/NumberPrecision.java	(date 1584699609768)
+@@ -4,7 +4,7 @@
+ import java.util.Scanner;
+ import java.util.stream.Stream;
+ 
+-public class NumberPrecision {
++class NumberPrecision {
+     public static void main(String[] args) {
+         int number = getNumber();
+         appendToTarget(number);
+Index: src/hangman/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/Menu.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/Menu.java	(date 1584699609886)
+@@ -3,7 +3,7 @@
+ import java.util.InputMismatchException;
+ import java.util.Scanner;
+ 
+-public enum Menu {
++enum Menu {
+     PLAY("Play"),
+     EXIT("Exit");
+ 
+Index: src/arrayPractice/ArrayComputing.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/arrayPractice/ArrayComputing.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/arrayPractice/ArrayComputing.java	(date 1584699362942)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Arrays;
+ 
+-public class ArrayComputing {
++class ArrayComputing {
+ 
+     int[][] biggerSum(int[][] arr1, int[][] arr2){
+         CalculationsOnArrays calc = new CalculationsOnArrays();
+Index: src/fizzBuzz/FizzBuzz.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/fizzBuzz/FizzBuzz.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/fizzBuzz/FizzBuzz.java	(date 1584699609717)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.stream.IntStream;
+ 
+-public class FizzBuzz {
++class FizzBuzz {
+     public static void main(String[] args) {
+         String fizz = "Fizz";
+         String buzz = "Buzz";
+Index: src/ticketControl/TicketController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/ticketControl/TicketController.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/ticketControl/TicketController.java	(date 1584699609986)
+@@ -5,7 +5,7 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-public class TicketController {
++class TicketController {
+     public static void main(String[] args) {
+         Passenger[] passengers = new Passenger[5];
+         passengers[0] = (new Passenger("Maciej", "Ruciński"));
+Index: src/ticketControl/Ticket.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/ticketControl/Ticket.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/ticketControl/Ticket.java	(date 1584699609730)
+@@ -4,7 +4,7 @@
+ import java.time.LocalTime;
+ import java.time.format.DateTimeFormatter;
+ 
+-public class Ticket {
++class Ticket {
+     private LocalTime validationTime;
+     private long ticketMinutes;
+     private LocalTime expirationTime;
+Index: src/warehouse/StockQuantity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/StockQuantity.java	(date 1584699609917)
++++ src/warehouse/StockQuantity.java	(date 1584699609917)
+@@ -0,0 +1,23 @@
++package warehouse;
++
++import java.math.BigDecimal;
++import java.math.BigInteger;
++import java.math.MathContext;
++import java.math.RoundingMode;
++
++class StockQuantity {
++    private int stockQuantity;
++
++    public StockQuantity(int quantity) {
++        this.stockQuantity = quantity;
++    }
++
++    public int getStockQuantity() {
++        return stockQuantity;
++    }
++
++    @Override
++    public String toString() {
++        return String.valueOf(stockQuantity);
++    }
++}
+Index: src/playlist/Song.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/playlist/Song.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/playlist/Song.java	(date 1584699609877)
+@@ -1,15 +1,15 @@
+ package playlist;
+ 
+-public class Song {
++class Song {
+     private String songName;
+     private int songTime;
+ 
+-    public Song(String songName, int songTime) {
++    Song(String songName, int songTime) {
+         this.songName = songName;
+         this.songTime = songTime;
+     }
+ 
+-    public int getSongTime() {
++    int getSongTime() {
+         return songTime;
+     }
+ }
+Index: src/diamondDrawer/DiamondDrawer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/diamondDrawer/DiamondDrawer.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/diamondDrawer/DiamondDrawer.java	(date 1584699609945)
+@@ -3,11 +3,10 @@
+ import java.util.InputMismatchException;
+ import java.util.Scanner;
+ 
+-public class DiamondDrawer {
++class DiamondDrawer {
+     public static void main(String[] args) {
+         String diamond = createDiamond(10);
+         System.out.println(diamond);
+-        System.out.println(Long.MAX_VALUE);
+     }
+ 
+     private static String createDiamond(int length){
+Index: src/warehouse/Stock.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/Stock.java	(date 1584699609954)
++++ src/warehouse/Stock.java	(date 1584699609954)
+@@ -0,0 +1,15 @@
++package warehouse;
++
++import java.util.List;
++
++class Stock {
++    private List<WarehousePosition> stock;
++
++    public Stock(String fileName) {
++        this.stock = new Data(fileName).getData();
++    }
++
++    void printStock(){
++        stock.forEach(warehousePosition -> System.out.println(warehousePosition));
++    }
++}
+Index: src/arrayPractice/CalculationsOnArrays.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/arrayPractice/CalculationsOnArrays.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/arrayPractice/CalculationsOnArrays.java	(date 1584699362909)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Arrays;
+ 
+-public class CalculationsOnArrays {
++class CalculationsOnArrays {
+ 
+     int sumArray(int [][] arr){
+         int sum = 0;
+Index: src/warehouse/WarehousePosition.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/WarehousePosition.java	(date 1584699609934)
++++ src/warehouse/WarehousePosition.java	(date 1584699609934)
+@@ -0,0 +1,42 @@
++package warehouse;
++
++import java.math.BigDecimal;
++import java.math.MathContext;
++import java.math.RoundingMode;
++
++class WarehousePosition {
++    private Product product;
++    private StockQuantity quantity;
++    private String stars;
++
++    public WarehousePosition(Product product, StockQuantity quantity) {
++        this.product = product;
++        this.quantity = quantity;
++        setStars();
++    }
++
++    private void setStars(){
++        double quantity = this.quantity.getStockQuantity();
++        StringBuilder starsBuilder = new StringBuilder();
++        if (quantity % 10 < 5){
++            quantity = BigDecimal.valueOf(quantity / 10).round(new MathContext(1, RoundingMode.HALF_DOWN)).doubleValue();
++        } else{
++            quantity = BigDecimal.valueOf(quantity / 10).round(new MathContext(1, RoundingMode.HALF_UP)).doubleValue();
++        }
++        starsBuilder.append("*".repeat(Math.max(0, (int) quantity)));
++        stars = starsBuilder.toString();
++    }
++
++    @Override
++    public String toString() {
++        return product + " (" + quantity + ") " + stars;
++    }
++
++    public static void main(String[] args) {
++        WarehousePosition w1 = new WarehousePosition(new Product("Product1"), new StockQuantity(33));
++        WarehousePosition w2 = new WarehousePosition(new Product("Product2"), new StockQuantity(47));
++
++        System.out.println(w1);
++        System.out.println(w2);
++    }
++}
+Index: src/arrayPractice/ArrayPractice.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/arrayPractice/ArrayPractice.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/arrayPractice/ArrayPractice.java	(date 1584699362889)
+@@ -1,6 +1,6 @@
+ package arrayPractice;
+ 
+-public class ArrayPractice {
++class ArrayPractice {
+     public static void main(String[] args) {
+ 
+         ArrayComputing a = new ArrayComputing();
+Index: src/drawingExcercise/Rectangle.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/drawingExcercise/Rectangle.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/drawingExcercise/Rectangle.java	(date 1584699609996)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Scanner;
+ 
+-public class Rectangle implements Drawable{
++class Rectangle implements Drawable{
+     private int a;
+     private int b;
+ 
+Index: src/warehouse/RunWarehouse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/RunWarehouse.java	(date 1584699609788)
++++ src/warehouse/RunWarehouse.java	(date 1584699609788)
+@@ -0,0 +1,16 @@
++package warehouse;
++
++import java.io.File;
++
++class RunWarehouse {
++    public static void main(String[] args) {
++        String filename = "data.csv";
++        new FileCreator(filename);
++        new Stock(filename).printStock();
++        deleteFile(filename);
++    }
++
++    private static void deleteFile(String fileName){
++        new File(fileName).delete();
++    }
++}
+Index: src/drawingExcercise/Square.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/drawingExcercise/Square.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/drawingExcercise/Square.java	(date 1584699609755)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Scanner;
+ 
+-public class Square implements Drawable {
++class Square implements Drawable {
+ 
+     private int a;
+ 
+Index: src/drawingExcercise/DrawTree.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/drawingExcercise/DrawTree.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/drawingExcercise/DrawTree.java	(date 1584699609810)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Scanner;
+ 
+-public class DrawTree implements Drawable {
++class DrawTree implements Drawable {
+     private int height;
+ 
+     @Override
+Index: src/playlist/Playlist.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/playlist/Playlist.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/playlist/Playlist.java	(date 1584699609800)
+@@ -5,7 +5,7 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+-public class Playlist {
++class Playlist {
+     public static void main(String[] args) {
+         List<Song> songs = new ArrayList<>();
+         songs.add(new Song("Ulalala", 320));
+Index: src/hangman/IPhraseSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/IPhraseSource.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/IPhraseSource.java	(date 1584699609857)
+@@ -1,6 +1,6 @@
+ package hangman;
+ 
+-public interface IPhraseSource {
++interface IPhraseSource {
+ 
+     String getPhrase();
+ 
+Index: src/warehouse/Data.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/warehouse/Data.java	(date 1584699609837)
++++ src/warehouse/Data.java	(date 1584699609837)
+@@ -0,0 +1,36 @@
++package warehouse;
++
++import java.io.*;
++import java.util.ArrayList;
++import java.util.List;
++
++class Data {
++    private List<WarehousePosition> data;
++    private File file;;
++
++    public Data(String fileName){
++        data = new ArrayList<>();
++        file = new File(fileName);
++        try (
++                var br = new BufferedReader(
++                        new FileReader(file))
++                ){
++            String line;
++            while ((line = br.readLine()) != null){
++                data.add(newWarehousePosition(line));
++            }
++        } catch (IOException e) {
++            System.err.println("Sth wrong with the file here!!!!!!!");;
++        }
++    }
++
++    private WarehousePosition newWarehousePosition(String line){
++        Product product = new Product(line.substring(0,line.indexOf(";")));
++        StockQuantity quantity = new StockQuantity(Integer.parseInt(line.substring(line.indexOf(";") + 1)));
++        return new WarehousePosition(product, quantity);
++    }
++
++    public List<WarehousePosition> getData() {
++        return data;
++    }
++}
+Index: src/drawingExcercise/Draw.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/drawingExcercise/Draw.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/drawingExcercise/Draw.java	(date 1584699609975)
+@@ -2,7 +2,7 @@
+ 
+ import java.util.Scanner;
+ 
+-public class Draw {
++class Draw {
+     public static void main(String[] args) {
+         Scanner sc = new Scanner(System.in);
+         System.out.println("What do you want to draw? (square / rectangle / tree)" + "\n> ");
+Index: src/drawingExcercise/Drawable.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/drawingExcercise/Drawable.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/drawingExcercise/Drawable.java	(date 1584699609692)
+@@ -1,6 +1,6 @@
+ package drawingExcercise;
+ 
+-public interface Drawable {
++interface Drawable {
+     void draw();
+     void setData();
+ }
+Index: src/hangman/ListPhraseSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/ListPhraseSource.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/ListPhraseSource.java	(date 1584699609780)
+@@ -5,7 +5,7 @@
+ import java.util.List;
+ import java.util.Random;
+ 
+-public class ListPhraseSource implements IPhraseSource {
++class ListPhraseSource implements IPhraseSource {
+     @Override
+     public String getPhrase() {
+         String keyword = PHRASES.get(new Random().nextInt(PHRASES.size())).toUpperCase();
+Index: src/hangman/FilePhraseSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/hangman/FilePhraseSource.java	(revision 8bdcf1b825a1a37ba85717525ca8b7c3baba7040)
++++ src/hangman/FilePhraseSource.java	(date 1584699609848)
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-public class FilePhraseSource implements IPhraseSource {
++class FilePhraseSource implements IPhraseSource {
+ 
+     private final String FILE_NAME = "HangManWords.txt";
+ 

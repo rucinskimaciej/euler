@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-public class WordSource {
+class WordSource {
 
         private final String FILE_NAME = "HangManWords.txt";
 

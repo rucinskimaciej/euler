@@ -2,7 +2,7 @@ package drawingExcercise;
 
 import java.util.Scanner;
 
-public class Square implements Drawable {
+class Square implements Drawable {
 
     private int a;
 

@@ -3,7 +3,7 @@ package hangman;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public enum Menu {
+enum Menu {
     PLAY("Play"),
     EXIT("Exit");
 

@@ -1,6 +1,6 @@
 package hangman;
 
-public interface IPhraseSource {
+interface IPhraseSource {
 
     String getPhrase();
 
