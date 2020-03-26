@@ -15,7 +15,7 @@ class Order {
 
         boolean orderOK = false;
         while (!orderOK) {
-            order = getOrder(new Scanner(System.in).nextLine());
+            order = completeOrder(new Scanner(System.in).nextLine());
             orderOK = true;
         }
         System.out.println();
@@ -44,7 +44,7 @@ class Order {
 
     }
 
-    private Map<Integer, Integer> getOrder(String orderString) {
+    private Map<Integer, Integer> completeOrder(String orderString) {
         Map<Integer, Integer> order = new TreeMap<>();
         Stream.of(orderString.split(" "))
                 .filter(element -> {

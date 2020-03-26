@@ -1,4 +1,4 @@
-package restauracja;
+package newRestaurant;
 
 enum Menu {
     PIZZA_MARGHARITA (new Dish("Pizza Margherita", 24.99)),
@@ -35,12 +35,18 @@ enum Menu {
         }
     }
 
-    static Dish choiceFromInt(int number) {
-        try {
-            return values()[number].dish;
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.err.println("One of the numbers is from outside the list : " + number + ". Please try again!");
+    static Dish choiceFromInt(int number) throws ArrayIndexOutOfBoundsException {
+        return values()[number].dish;
+    }
+
+    static int getLongestDishName() {
+        int maxLength = 0;
+        for (Menu position: values()) {
+            int dishNameLength = position.dish.getName().length();
+            if (dishNameLength > maxLength) {
+                maxLength = dishNameLength;
+            }
         }
-        return null;
+        return maxLength;
     }
 }
